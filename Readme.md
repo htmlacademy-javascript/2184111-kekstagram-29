@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Denis Sidorov](https://up.htmlacademy.ru/javascript/29/user/2184111).
-* Наставник: `Неизвестно`.
+* Наставник: [Василий Петрухин] (https://htmlacademy.ru/profile/id1528403).
 
 ---
 

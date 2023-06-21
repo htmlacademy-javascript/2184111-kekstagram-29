@@ -80,8 +80,6 @@ const createIdGenerator = () => {
   };
 };
 
-const getCommentId = createIdGenerator();
-
 const getRandomInteger = (a, b) => {
   const lower = Math.ceil(Math.min(a, b));
   const upper = Math.floor(Math.max(a, b));
@@ -91,6 +89,24 @@ const getRandomInteger = (a, b) => {
 
 const getRandomArrayElement = (elements) =>
   elements[getRandomInteger(0, elements.length - 1)];
+
+const createRandomIdFromRangeGenerator = (min, max) => {
+  const previousValues = [];
+  return function () {
+    let currentValue = getRandomInteger(min, max);
+    if (previousValues.length >= (max - min + 1)) {
+      console.error('Перебраны все числа из диапазона от ' + min + ' до ' + max);
+      return null;
+    }
+    while (previousValues.includes(currentValue)) {
+      currentValue = getRandomInteger(min, max);
+    }
+    previousValues.push(currentValue);
+    return currentValue;
+  };
+}
+
+let getCommentId = createRandomIdFromRangeGenerator(1, 1000);
 
 const createMessage = () => {
   if (getRandomInteger(0, 1)) {

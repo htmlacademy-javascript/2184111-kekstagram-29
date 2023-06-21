@@ -18,6 +18,12 @@ function checkingPalindrome(baseString) {
 
 console.log(checkingPalindrome('Довод'));
 
+const PICTURE_COUNT = 25;
+const AVATAR_COUNT = 6;
+const LIKE_MIN_COUNT = 15;
+const LIKE_MAX_COUNT = 200;
+const COMMENT_COUNT = 30;
+
 
 const MESSAGES = [
   'Всё отлично!',
@@ -117,18 +123,18 @@ const createMessage = () => {
 
 const posts = [];
 
-for (let i = 1; i <= 25; i++) {
+for (let i = 1; i <= PICTURE_COUNT; i++) {
   const post = {
     id: i,
     url: 'photos/' + i + '.jpg',
     description: DESCRIPTIONS[i - 1],
-    likes: getRandomInteger(15, 200),
+    likes: getRandomInteger(LIKE_MIN_COUNT, LIKE_MAX_COUNT),
     comments: []
   };
-  for (let j = 1; j <= getRandomInteger(0, 30); j++) {
+  for (let j = 1; j <= getRandomInteger(0, COMMENT_COUNT); j++) {
     const comment = {
       id: getCommentId(),
-      avatar: 'img/avatar-' + getRandomInteger(1, 6) + '.svg.',
+      avatar: 'img/avatar-' + getRandomInteger(1, AVATAR_COUNT) + '.svg.',
       message: createMessage(),
       name: getRandomArrayElement(NAMES),
     };

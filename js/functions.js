@@ -134,7 +134,7 @@ for (let i = 1; i <= PICTURE_COUNT; i++) {
   for (let j = 1; j <= getRandomInteger(0, COMMENT_COUNT); j++) {
     const comment = {
       id: getCommentId(),
-      avatar: 'img/avatar-' + getRandomInteger(1, AVATAR_COUNT) + '.svg.',
+      avatar: 'img/avatar-' + getRandomInteger(1, AVATAR_COUNT) + '.svg',
       message: createMessage(),
       name: getRandomArrayElement(NAMES),
     };

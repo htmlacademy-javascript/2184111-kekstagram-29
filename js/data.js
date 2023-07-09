@@ -70,7 +70,7 @@ const createMessage = () => {
 };
 
 
-const CreatePosts = () => {
+const createPosts = () => {
   const posts = [];
   for (let i = 1; i <= PICTURE_COUNT; i++) {
     const post = {
@@ -94,8 +94,8 @@ const CreatePosts = () => {
   return posts;
 };
 
-CreatePosts();
+createPosts();
 
-console.log(CreatePosts());
+console.log(createPosts());
 
-export {CreatePosts};
+export {createPosts};

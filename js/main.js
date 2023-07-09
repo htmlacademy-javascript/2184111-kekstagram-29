@@ -1,2 +1,3 @@
-import {CreatePosts} from '/js/data.js';
+import {createPosts} from '/js/data.js';
+import '/js/miniatures.js';
 

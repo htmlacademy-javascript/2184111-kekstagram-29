@@ -60,7 +60,7 @@ const DESCRIPTIONS = [
   'Городской полицай',
 ];
 
-let getCommentId = createRandomIdFromRangeGenerator(1, 1000);
+const getCommentId = createRandomIdFromRangeGenerator(1, 1000);
 
 const createMessage = () => {
   if (getRandomInteger(0, 1)) {
@@ -95,7 +95,5 @@ const createPosts = () => {
 };
 
 createPosts();
-
-console.log(createPosts());
 
 export {createPosts};

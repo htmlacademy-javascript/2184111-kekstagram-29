@@ -79,7 +79,7 @@ const DESCRIPTIONS = [
   "Городской полицай",
 ];
 
-let getCommentId = createRandomIdFromRangeGenerator(1, 1000);
+const getCommentId = createRandomIdFromRangeGenerator(1, 1000);
 
 const createMessage = () => {
   if (getRandomInteger(0, 1)) {
@@ -90,7 +90,7 @@ const createMessage = () => {
   );
 };
 
-const CreatePosts = () => {
+const createPosts = () => {
   const posts = [];
   for (let i = 1; i <= PICTURE_COUNT; i++) {
     const post = {
@@ -114,8 +114,6 @@ const CreatePosts = () => {
   return posts;
 };
 
-CreatePosts();
+createPosts();
 
-console.log(CreatePosts());
-
-export { CreatePosts };
+export {createPosts};

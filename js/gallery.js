@@ -30,7 +30,8 @@ const bigPictureModal = document.querySelector(".big-picture");
 const bigPictureContainer = document.querySelector(".big-picture__img");
 const bigImage = bigPictureContainer.querySelector("img");
 const bigPictureSocial = document.querySelector(".social");
-// const bigPictureCloseButton = document.querySelector('big-picture__cancel');
+const bigPictureCloseButton = document.querySelector("#picture-cancel");
+console.log(bigPictureCloseButton);
 const bigPictureCommentsCount =
   bigPictureSocial.querySelector(".comments-count");
 const bigPictureLikes = bigPictureSocial.querySelector(".likes-count");
@@ -61,6 +62,11 @@ function onDocumentKeydown(evt) {
   }
 }
 
+function onBPcloseButtonClick(evt) {
+  evt.preventDefault();
+  closeBigPicture();
+}
+
 const onMiniatureClick = function (evt) {
   if (evt.target.nodeName === "IMG") {
     bigPictureModal.classList.remove("hidden");
@@ -79,8 +85,9 @@ const onMiniatureClick = function (evt) {
     bigPictureCommentsLoader.classList.add("hidden");
     bodyObject.classList.add("modal-open");
     document.addEventListener("keydown", onDocumentKeydown);
-    const bigPictureListClone = bigPictureCommentList.cloneNode(true);
-    bigPictureCommentList.remove();
+    bigPictureCloseButton.addEventListener("click", onBPcloseButtonClick);
+    // const bigPictureListClone = bigPictureCommentList.cloneNode(true);
+    // bigPictureCommentList.remove();
 
     const createCommentNode = (commentData) => {
       const commentNodeClone = bigPictureCommentItem.cloneNode(true);
@@ -95,17 +102,12 @@ const onMiniatureClick = function (evt) {
 
     posts.forEach((post) => {
       if ("photos/" + lastPart === post.url) {
-        bigPictureListClone.innerHTML = "";
+        bigPictureCommentList.innerHTML = "";
         post.comments.forEach((comment) => {
           const commentNode = createCommentNode(comment);
-          bigPictureListClone.appendChild(commentNode);
+          bigPictureCommentList.appendChild(commentNode);
         });
-        bigPictureSocial.insertBefore(
-          bigPictureListClone,
-          bigPictureCommentsLoader
-        );
       }
-      // }
     });
   }
 };

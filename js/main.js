@@ -1,3 +1,2 @@
-import '/js/miniatures.js';
+import "/js/gallery.js";
 // import '/js/bigpicture.js';
-

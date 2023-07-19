@@ -17,3 +17,5 @@ const checkTime = (checkin, checkout, meetingStart, duration) => {
 };
 
 console.log(checkTime('8:00','17:30','17:00',30));
+
+// 1

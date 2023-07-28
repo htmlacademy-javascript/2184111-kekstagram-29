@@ -435,6 +435,12 @@ main {
   border: 0;
 }
 
+.img-upload__field-wrapper--error {
+  color: red;
+  text-transform: lowercase;
+  font-size: 12px;
+}
+
 .scale__control:hover,
 .scale__control:focus {
   background-color: rgba(0, 0, 0, 0.3);

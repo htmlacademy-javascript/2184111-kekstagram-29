@@ -1,2 +1,2 @@
-import "/js/gallery.js";
-// import '/js/bigpicture.js';
+import '/js/gallery.js';
+import '/js/form.js';

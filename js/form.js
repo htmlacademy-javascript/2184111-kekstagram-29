@@ -257,5 +257,3 @@ originalButton.addEventListener('change', (evt) => {
 });
 
 export {};
-
-sdelalDelo();
